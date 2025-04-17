@@ -51,14 +51,17 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'classroomai.urls'
+AUTH_USER_MODEL = 'teacher.Teacher'
 
+# classroomai/settings.py
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'teacher/templates'],  # Add this line
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
